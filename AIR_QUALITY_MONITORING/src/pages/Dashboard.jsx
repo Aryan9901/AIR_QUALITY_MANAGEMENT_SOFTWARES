@@ -22,6 +22,9 @@ const Dashboard = () => {
 	const [searchedLat, setSearchedLat] = useState("");
 	const [searchedLong, setSearchedLong] = useState("");
 	const [currCity, setCurrCity] = useState("");
+	const [cityAqi, setCityAqi] = useState("");
+	const [searchedcity, setSearchedcity] = useState("");
+	const [currAqi, setCurrAqi] = useState("");
 	const [weather, setWeather] = useState({
 		temp: "",
 		humidity: "",
@@ -37,6 +40,19 @@ const Dashboard = () => {
 	});
 
 	useEffect(() => {
+		const fetchCity = async () => {
+			const { data } = await axios.get("https://ipinfo.io/?token=");
+			console.log(data);
+			const loc = data.loc.split(",");
+			const response = await axios.get(`https://api.waqi.info/feed/geo:${loc[0]};${loc[1]}/?token=5eadc71e11cfc7bef95ecb69790a6f6a10254a34`);
+			console.log(response);
+			setCurrCity(response.data.data.city.name);
+			setCurrAqi(response.data.data.aqi);
+		};
+		fetchCity();
+	}, []);
+
+	useEffect(() => {
 		if (!isGeolocationAvailable && !isGeolocationEnabled) {
 			alert("Geolocation is unavailable");
 		}
@@ -48,8 +64,7 @@ const Dashboard = () => {
 			setPollutants(data.list[0].components);
 			setAqi(data.list[0].main.aqi);
 		};
-
-		setQuery("india");
+		`	`;
 
 		if (coords) {
 			fetchAqiData();
@@ -72,12 +87,6 @@ const Dashboard = () => {
 		if (query) {
 			fetchWeatherData();
 		}
-
-		const fetchCity = async () => {
-			const { data } = await axios.get("https://ipinfo.io/?token=");
-			setCurrCity(data.city);
-		};
-		fetchCity();
 	}, [query]);
 
 	useEffect(() => {
@@ -88,8 +97,19 @@ const Dashboard = () => {
 			setCityaqi(data.list[0].main.aqi);
 			setCityPollutant(data.list[0].components);
 		};
+
+		const fetchCityAqi = async () => {
+			const { data } = await axios.get(
+				`https://api.waqi.info/feed/geo:${searchedLat};${searchedLong}/?token=5eadc71e11cfc7bef95ecb69790a6f6a10254a34`
+			);
+			console.log(data);
+			setCityAqi(data.data.aqi);
+			setSearchedcity(data.data.city.name);
+		};
+
 		if (searchedLat && searchedLong && query) {
 			fetchAqiByCity();
+			fetchCityAqi();
 		}
 	}, [searchedLat, searchedLong]);
 
@@ -109,9 +129,15 @@ const Dashboard = () => {
 								cityPollutant?.nh3,
 								cityPollutant?.pm10,
 							]}
-							heading={query}
+							heading={searchedcity}
+							aqi={cityAqi}
 						/>
-						<WidgetItem heading={currCity || ""} color="rgba(0,198,202)" data={[38, 306, 10, 6, pollutants?.nh3, pollutants?.pm10]} />
+						<WidgetItem
+							heading={currCity || ""}
+							color="rgba(0,198,202)"
+							data={[38, 306, 10, 6, pollutants?.nh3, pollutants?.pm10]}
+							aqi={currAqi}
+						/>
 						{/* <WidgetItem percent={4} value={23000} heading="Invoices"  /> */}
 					</section>
 					<section className="mapContainer">
@@ -127,7 +153,7 @@ const Dashboard = () => {
 							</div>
 							<div className="maindata">
 								<div className="graph">
-									<CircularProgressbar value={cityaqi} text={`${cityaqi}`} />
+									<CircularProgressbar value={cityAqi} text={`${cityAqi}`} />
 
 									<div className="g1">
 										<IoIosPartlySunny /> {weather.temp}C
@@ -170,18 +196,14 @@ const Dashboard = () => {
 						</div>
 						<section className="cityCard">
 							<div className="header">
-								<h3>
-									<FaLocationArrow />
-									Home
-								</h3>
+								<h3>{currCity}</h3>
 								<button className={cityaqi > 10 ? "redbg" : aqi >= 5 ? "purplebg" : "greenbg"}>
 									{aqi > 10 ? "Severe" : aqi >= 5 ? "Moderate" : "Mild"}
 								</button>
 							</div>
-							<p>AQI trend in last 24 hrs</p>
 							<div className="maindata" style={{ marginBottom: "2rem" }}>
 								<div className="graph">
-									<CircularProgressbar value={aqi} text={`${aqi}`} />
+									<CircularProgressbar value={currAqi} text={`${currAqi}`} maxValue={500} />
 								</div>
 								<div className="data">
 									<AqiLevel value={pollutants.pm2_5} unit="ug/m^2" parameter="PM 2.5" color={"yellow"} />
@@ -285,7 +307,7 @@ const data = [23, 35, 2.5, 89, 20, 49]; // Example data, replace with your actua
 const aqi = calculateAqi(data);
 console.log("AQI:", aqi);
 
-export const WidgetItem = ({ heading, aqivalue, data }) => {
+export const WidgetItem = ({ heading, data, aqi }) => {
 	return (
 		<article className="widget">
 			<div>
@@ -300,7 +322,7 @@ export const WidgetItem = ({ heading, aqivalue, data }) => {
 					</select>
 				</p> */}
 			</div>
-			<h2>{Math.abs(calculateAqi(data))}</h2>
+			<CircularProgressbar value={aqi} text={`${aqi}`} maxValue={500} />
 			<h3>{calculateAqi(data)}</h3>
 		</article>
 	);

@@ -13,10 +13,14 @@
 		padding: 2rem;
 
 		.widget {
+			svg {
+				@include square(10rem);
+				margin: 0 auto;
+			}
 			border-radius: 10px;
 			min-width: 18rem;
 			height: 14rem;
-			background-color: #029e9d;
+			background-color: #feffffa5;
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.132);
 			padding: 1rem;
 			@include flex(column, flex-start, unset, 0.4rem);
