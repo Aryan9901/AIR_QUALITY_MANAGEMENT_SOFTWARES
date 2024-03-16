@@ -83,24 +83,27 @@
 			}
 		}
 	}
-
+	.aqicnt {
+		background: url("/public/image.png") #00000064;
+	}
 	// ** map hero container
 	.mapContainer {
 		min-height: 100vh;
 		width: 100%;
-		background-color: #f7b898;
 		padding: 1rem 2rem;
+		background-size: cover;
+		background-position: center;
 		@include flex(row, space-between, flex-start, 1rem);
 		> div {
 			width: clamp(400px, 60%, 100%);
 			@include flex(column, flex-start, center, 1rem);
-			box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 0 2px rgba(83, 83, 83, 0.2);
 			border-radius: 11px;
 		}
 
 		> .HomeCard {
 			padding: 2rem 1rem;
-			background-color: #fcfcfc8f;
+			background-color: #fcfcfcaf;
 			width: 60%;
 			> div {
 				@include flex(row, space-between, center, 0);
@@ -120,19 +123,19 @@
 				width: 100%;
 				@include flex(row, space-between, center, 1rem);
 				> div {
-					@include flex(row, space-evenly, center, 1rem);
+					@include flex(row, center, center, 1rem);
 					flex-wrap: wrap;
 				}
 				> .graph {
 					width: 40%;
-					> .piechart {
-						@include square(8rem);
+					> svg {
+						@include square(11rem);
 						border-radius: 50%;
-						background-color: red;
 					}
 					> .g1,
 					> .g2 {
 						width: 40%;
+						margin: 0 auto;
 					}
 				}
 				> .data {
@@ -160,12 +163,25 @@
 					}
 				}
 			}
+			.piechartdata {
+				> canvas {
+					width: 400px !important;
+					height: 400px !important;
+					margin: 0 auto;
+				}
+			}
 		}
 
 		.cityCard {
 			padding: 2rem 1rem;
 			background-color: #fcfcfc8f;
 			width: 40%;
+			.aqiLevel {
+				margin-bottom: 1rem;
+				text-align: center;
+				width: 80%;
+				margin: 0 auto;
+			}
 			> div {
 				@include flex(row, space-between, center, 0);
 				width: 100%;
@@ -187,7 +203,7 @@
 				padding-top: 2rem;
 				> .graph {
 					> svg {
-						width: 60%;
+						@include square(10rem);
 						display: block;
 						margin: 1rem auto;
 					}
