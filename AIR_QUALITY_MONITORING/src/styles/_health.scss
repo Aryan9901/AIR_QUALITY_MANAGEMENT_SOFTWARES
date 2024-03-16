@@ -1,0 +1,80 @@
+.health {
+	overflow-y: auto;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	height: 100vh;
+	width: 100%;
+	background-color: aliceblue;
+	> h2 {
+		text-align: center;
+		padding: 2rem;
+		// width: 55%;
+		font-size: 2rem;
+		// text-wrap: balance;
+		margin: 0 auto;
+	}
+	> h4 {
+		text-align: center;
+		padding: 0.5rem 1rem;
+		font-weight: 400;
+		opacity: 0.6;
+		font-size: 1.5rem;
+		width: 70%;
+		// text-wrap: balance;
+		margin: 0 auto;
+		font-family: "poppins";
+	}
+	> div:nth-child(3) {
+		margin-top: 2rem;
+		padding: 0rem 2rem;
+		font-family: "poppins";
+		font-weight: 400;
+		border-left: 10px solid #029e9d;
+		margin-left: 2rem;
+		> p {
+			letter-spacing: 2px;
+		}
+	}
+	> h3 {
+		margin-top: 1rem;
+		padding: 2rem;
+		font-size: 1.6rem;
+		> span {
+			padding-bottom: 0.2rem;
+			border-bottom: 3px solid #029e9d;
+		}
+	}
+	> img {
+		width: 92%;
+		margin: 1rem auto;
+		display: block;
+	}
+	> .deaths {
+		margin: 4rem auto;
+		width: 92%;
+		padding: 2rem 0;
+		text-align: center;
+		border-top: 1px solid #e6e7e8;
+		border-bottom: 1px solid #e6e7e8;
+		> h5 {
+			font-size: 3rem;
+			color: #029e9d;
+		}
+		> p {
+			font-size: 1rem;
+			font-weight: 400;
+			color: #029e9d;
+			font-family: "poppins";
+			opacity: 0.6;
+		}
+	}
+	.youtubeContainer {
+		@include flex(row, center, flex-start, 1rem);
+		flex-wrap: wrap;
+		margin-bottom: 4rem;
+		> iframe {
+			width: clamp(200px, 31%, 100%);
+		}
+	}
+}

@@ -1,0 +1,57 @@
+.aqiIndex {
+	overflow-y: auto;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	height: 100vh;
+	width: 100%;
+	background-color: aliceblue;
+	> h2 {
+		margin: 2rem 0;
+		text-align: center;
+	}
+	> p {
+		text-align: center;
+		text-wrap: balance;
+		width: 45%;
+		margin: 1rem auto;
+		font-weight: 500;
+		font-family: "poppins";
+		opacity: 0.6;
+	}
+	> .aqiContainer {
+		@include flex(row, center, flex-start, 1rem);
+		flex-wrap: wrap;
+		width: 100%;
+		// background-color: red;
+		padding: 2rem;
+		> div {
+			@include flex(column, flex-start, center, 1rem);
+			width: clamp(200px, 31%, 100%);
+			background-color: rgba(185, 187, 185, 0.584);
+			color: #000000;
+			padding: 1rem 2rem;
+			height: 16rem;
+			border-radius: 8px;
+			text-align: center;
+			&:nth-child(6) {
+				> img {
+					// height: 94px;
+					width: 97%;
+				}
+			}
+			> img {
+				width: 30%;
+			}
+			> h3 {
+				font-size: 1rem;
+			}
+			> p {
+				font-size: 0.7rem;
+				font-family: "poppins";
+				font-weight: 500;
+				opacity: 0.6;
+			}
+		}
+	}
+}

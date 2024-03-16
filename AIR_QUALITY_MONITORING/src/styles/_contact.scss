@@ -1,0 +1,49 @@
+.contact {
+	overflow-y: auto;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	height: 100vh;
+	width: 100%;
+	background-color: aliceblue;
+	> h2 {
+		font-size: 2.3rem;
+		text-align: center;
+		margin: 2rem;
+		padding-bottom: 0.3rem;
+		border-bottom: 1px solid #e6e7e8;
+		width: 70%;
+		margin: 2rem auto;
+	}
+	> p {
+		font-family: "poppins";
+		text-align: center;
+		letter-spacing: 2px;
+		width: 70%;
+		margin: 0 auto;
+		text-wrap: balance;
+	}
+	> div {
+		@include grid(20% 80%);
+		border-radius: 8px;
+		place-items: center;
+		margin: 1rem auto;
+		padding: 1rem 2rem;
+		box-shadow: 0 0 2px #e6e7e8;
+		width: 50%;
+		> svg {
+			font-size: 1.4rem;
+			justify-self: baseline;
+		}
+		> div {
+			justify-self: baseline;
+			> h4 {
+				font-size: 1.2rem;
+			}
+			> p {
+				font-family: "poppins";
+				width: 100%;
+			}
+		}
+	}
+}
