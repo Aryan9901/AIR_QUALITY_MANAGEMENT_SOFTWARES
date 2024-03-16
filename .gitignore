@@ -22,3 +22,4 @@
 /AIR_QUALITY/MONITORING/*.njsproj
 /AIR_QUALITY/MONITORING/*.sln
 /AIR_QUALITY/MONITORING/*.sw?
+/discord_bot/node_modules
