@@ -8,11 +8,13 @@ import { useEffect, useState } from "react";
 import { FaLocationArrow } from "react-icons/fa";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { MdWaterDrop } from "react-icons/md";
-import { CircularProgressbar } from "react-circular-progressbar";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import axios from "axios";
 import { useGeolocated } from "react-geolocated";
 import { LineChart, PieChart } from "../components/chart";
+
+const aqiComparision = () => {};
 
 // getCountryNames
 const Dashboard = () => {
@@ -42,14 +44,13 @@ const Dashboard = () => {
 	useEffect(() => {
 		const fetchCity = async () => {
 			const { data } = await axios.get("https://ipinfo.io/?token=");
-			console.log(data);
 			const loc = data.loc.split(",");
 			const response = await axios.get(`https://api.waqi.info/feed/geo:${loc[0]};${loc[1]}/?token=5eadc71e11cfc7bef95ecb69790a6f6a10254a34`);
-			console.log(response);
 			setCurrCity(response.data.data.city.name);
 			setCurrAqi(response.data.data.aqi);
 		};
 		fetchCity();
+		setQuery("bhopal");
 	}, []);
 
 	useEffect(() => {
@@ -145,7 +146,7 @@ const Dashboard = () => {
 							<div className="header">
 								<h3>
 									<FaLocationArrow />
-									{query}
+									{searchedcity}
 								</h3>
 								<button className={cityaqi > 10 ? "redbg" : aqi >= 5 ? "purplebg" : "greenbg"}>
 									{aqi > 10 ? "Severe" : aqi >= 5 ? "Moderate" : "Mild"}
@@ -240,74 +241,29 @@ export const AqiLevel = ({ value, unit, parameter, color, max = 100 }) => {
 	);
 };
 
-// const calculateAqi = (data) => {
-// 	// Define national standards for each pollutant
-// 	const nationalStandards = {
-// 		pm25: 25,
-// 		co: 10,
-// 		no2: 40,
-// 		so2: 20,
-// 		nh3: 25,
-// 		pm10: 50,
-// 	};
-
-// 	// Calculate AQI for each pollutant
-// 	const calculatePollutantAqi = (pollutant, value) => {
-// 		const standard = nationalStandards[pollutant];
-// 		return Math.round((value / standard) * 100);
-// 	};
-
-// 	// Calculate AQI for each pollutant in the data array
-// 	const aqiValues = data.map((value, index) => {
-// 		const pollutant = ["pm25", "co", "no2", "so2", "nh3", "pm10"][index];
-// 		return calculatePollutantAqi(pollutant, parseFloat(value));
-// 	});
-
-// 	// Return the maximum AQI value
-// 	return Math.max(...aqiValues);
-// };
-
-const calculateAqi = (data) => {
-	// Define AQI breakpoints and corresponding ranges for each pollutant
-	const aqiBreakpoints = {
-		pm25: [0, 12, 35.4, 55.4, 150.4, 250.4, 350.4, 500.4],
-		pm10: [0, 55, 155, 255, 355, 425, 505, 605],
-		co: [0, 4.4, 9.4, 12.4, 15.4, 30.4, 40.4, 50.4],
-		no2: [0, 53, 100, 360, 649, 1249, 1649, 2049],
-		so2: [0, 35, 75, 185, 304, 604, 804, 1004],
-		nh3: [0, 53, 100, 360, 649, 1249, 1649, 2049],
-	};
-
-	// Calculate AQI for each pollutant
-	const calculatePollutantAqi = (pollutant, value) => {
-		const breakpoints = aqiBreakpoints[pollutant];
-		let aqi = 0;
-
-		for (let i = 0; i < breakpoints.length - 1; i++) {
-			if (value >= breakpoints[i] && value <= breakpoints[i + 1]) {
-				aqi = Math.round(((breakpoints[i + 1] - breakpoints[i]) / (breakpoints[i + 1] - breakpoints[i])) * (i + 1));
-				break;
-			}
-		}
-		return aqi;
-	};
-
-	// Calculate AQI for each pollutant in the data array
-	const aqiValues = data.map((value, index) => {
-		const pollutant = ["pm25", "pm10", "co", "no2", "so2", "nh3"][index];
-		return calculatePollutantAqi(pollutant, parseFloat(value));
-	});
-
-	// Return the maximum AQI value
-	return Math.max(...aqiValues);
-};
-
-// Test the function
-const data = [23, 35, 2.5, 89, 20, 49]; // Example data, replace with your actual data
-const aqi = calculateAqi(data);
-console.log("AQI:", aqi);
-
 export const WidgetItem = ({ heading, data, aqi }) => {
+	let pathColor = "";
+	let aqiLevel = "";
+
+	if (aqi >= 401 && aqi <= 500) {
+		pathColor = "#bf2133";
+		aqiLevel = "Hazardous";
+	} else if (aqi >= 301 && aqi <= 400) {
+		pathColor = "#975aa0";
+		aqiLevel = "Severe";
+	} else if (aqi >= 201 && aqi <= 300) {
+		pathColor = "pink";
+		aqiLevel = "Unhealthy";
+	} else if (aqi >= 101 && aqi <= 200) {
+		pathColor = "#e75834";
+		aqiLevel = "Poor";
+	} else if (aqi >= 51 && aqi <= 100) {
+		pathColor = "#D4CA2F";
+		aqiLevel = "Moderate";
+	} else {
+		pathColor = "#39a033";
+		aqiLevel = "Good";
+	}
 	return (
 		<article className="widget">
 			<div>
@@ -322,8 +278,28 @@ export const WidgetItem = ({ heading, data, aqi }) => {
 					</select>
 				</p> */}
 			</div>
-			<CircularProgressbar value={aqi} text={`${aqi}`} maxValue={500} />
-			<h3>{calculateAqi(data)}</h3>
+			<CircularProgressbar
+				value={aqi}
+				text={`${aqi}`}
+				maxValue={350}
+				styles={buildStyles({
+					pathColor: pathColor,
+					textColor: pathColor,
+				})}
+			/>
+			<div
+				className="aqi-level"
+				style={{
+					padding: ".6rem 3rem",
+					marginLeft: "auto",
+					backgroundColor: "#d7ebf1",
+					color: pathColor,
+					borderRadius: "60px",
+					marginTop: ".3rem",
+				}}
+			>
+				{aqiLevel}
+			</div>
 		</article>
 	);
 };

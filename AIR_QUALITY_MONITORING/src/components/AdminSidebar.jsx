@@ -73,7 +73,7 @@ const DivOne = ({ location }) => (
 	<div>
 		<ul>
 			<Li url="/dashboard" text="Home" Icon={RiDashboardFill} location={location} />
-			<Li url="/invoice" text="AQI Ranking" Icon={BsFileText} location={location} />
+			<Li url="/invoice" text="AQI Quality Index Scale" Icon={BsFileText} location={location} />
 			<Li url="/cars" text="Weather Ranking" Icon={AiTwotoneCar} location={location} />
 			{/*  TODO: NEED TO CHANGE THE NAME OF THE MONITOR TAB */}
 			<Li url="/profile/owner" text="Monitor" Icon={AiFillFileText} location={location} />
