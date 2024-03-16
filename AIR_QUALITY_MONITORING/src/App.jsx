@@ -11,6 +11,7 @@ const AqiIndex = lazy(() => import("./pages/AqiIndex"));
 const RecentBlogs = lazy(() => import("./pages/RecentBlogs"));
 const Blog = lazy(() => import("./pages/Blog"));
 const Health = lazy(() => import("./pages/Health"));
+const Contact = lazy(() => import("./pages/Contact"));
 
 const App = () => {
 	return (
@@ -23,6 +24,7 @@ const App = () => {
 					<Route path="/blogs" element={<RecentBlogs />} />
 					<Route path="/blogs/:id" element={<Blog />} />
 					<Route path="/health" element={<Health />} />
+					<Route path="/contact" element={<Contact />} />
 					<Route path="*" element={<h2>Page Not Found</h2>} />
 				</Routes>
 				<ToastContainer

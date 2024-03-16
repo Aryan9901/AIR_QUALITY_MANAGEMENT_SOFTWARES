@@ -72,6 +72,7 @@ const DivOne = ({ location }) => (
 			<Li url="/aqi/index" text="AQI Quality Index Scale" Icon={BsFileText} location={location} />
 			<Li url="/blogs" text="Blogs" Icon={LiaBlogSolid} location={location} />
 			<Li url="/health" text="AQI & Health" Icon={LiaBlogSolid} location={location} />
+			<Li url="/contact" text="Contact" Icon={LiaBlogSolid} location={location} />
 		</ul>
 	</div>
 );
