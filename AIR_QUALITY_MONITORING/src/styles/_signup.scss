@@ -1,0 +1,132 @@
+.signup {
+	> .login-nav {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1rem 4rem;
+		> img {
+			width: 7%;
+		}
+		> button {
+			padding: 1rem 2rem;
+			border-radius: 5px;
+			background-color: #009f9c;
+			color: #fcfcfc;
+			font-weight: 600;
+			border: none;
+			outline: none;
+			&:hover {
+				filter: brightness(0.9);
+				color: #fff;
+			}
+		}
+	}
+	> .login-main {
+		width: 100%;
+		padding: 1rem 4rem;
+		> section {
+			box-shadow: 0 0 3px 1px #e4e4e4;
+			@include flex(row, unset, unset, 0);
+			border-radius: 10px;
+			background-color: #fefefc;
+			> img {
+				// height: 100vh;
+				width: 49%;
+				padding: 1rem 5rem;
+				border-radius: 10px;
+				background-color: #de0074;
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+			> form {
+				padding-top: 9rem;
+				padding: 1rem 3rem;
+				width: 100%;
+				> * {
+					width: 100%;
+				}
+				> h2 {
+					font-size: 2rem;
+					text-align: center;
+					@include heading;
+					font-weight: 600;
+					font-family: helvetica rounded;
+				}
+				> p {
+					text-align: center;
+					font-size: 0.9rem;
+				}
+				@include flex(column, flex-start, flex-start, 0.8rem);
+				> input {
+					// margin-top: 1rem;
+					@include inputStyles(unset, 0.8rem 1.4rem, inherit, 1.2px solid #9c9898);
+					border-radius: 5px;
+					font-size: 1.1rem;
+					color: #222;
+					font-weight: 500;
+					width: 100%;
+					&::placeholder {
+						color: #020202;
+						font-weight: 300;
+						opacity: 0.4;
+					}
+				}
+				> button {
+					width: 100%;
+					padding: 1.2rem 3rem;
+					border-radius: 5px;
+					font-weight: 600;
+					border: none;
+					outline: none;
+					color: #fcfcfc;
+					background-color: #de0074;
+					font-size: 1.3rem;
+
+					&:hover {
+						filter: brightness(0.9);
+						// color: #fff;
+					}
+				}
+				> aside {
+					text-align: center;
+					margin: 0.4rem 0;
+					font-weight: 700;
+				}
+				> div {
+					@include flex(column, space-between, center, 0.7rem);
+					> button {
+						width: 100%;
+						border: 1.2px solid #9c9898;
+						padding: 1rem 2rem;
+						border-radius: 5px;
+						font-weight: 600;
+						outline: none;
+						color: #222;
+						background-color: #fcfcfc;
+						font-size: 0.9rem;
+						@include flex(row, center, center, 2rem);
+						&:hover {
+							filter: brightness(0.9);
+							// color: #fff;
+						}
+						> svg {
+							&:first-child {
+								-webkit-text-stroke: 1px solid red;
+								font-size: 1.2rem;
+							}
+						}
+					}
+				}
+				> .account {
+					> span {
+						margin-left: 0.5rem;
+						color: blue;
+						margin-top: 0.4rem;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}

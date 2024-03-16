@@ -1,0 +1,40 @@
+@mixin heading($spacing: 3px, $weight: 300, $case: uppercase) {
+	letter-spacing: $spacing;
+	font-weight: $weight;
+	text-transform: $case;
+}
+
+@mixin flex($dir: row, $justifyContent: center, $alignItems: center, $gap: 1rem) {
+	display: flex;
+	align-items: $alignItems;
+	justify-content: $justifyContent;
+	flex-direction: $dir;
+	gap: $gap;
+}
+
+@mixin grid($col: 1fr, $gap: 1rem, $row: unset) {
+	display: grid;
+	grid-template-columns: $col;
+	gap: $gap;
+	grid-template-rows: $row;
+}
+
+@mixin inputStyles($w: 100%, $p: 1rem, $bgColor: inherit, $border: none) {
+	width: $w;
+	padding: $p;
+	background-color: $bgColor;
+	border: $border;
+	outline: none;
+}
+
+@mixin posCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin square($size) {
+	height: $size;
+	width: $size;
+}
