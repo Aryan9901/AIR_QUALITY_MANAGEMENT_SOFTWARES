@@ -10,6 +10,7 @@ const Dashboard = lazy(() => import("./pages/Dashboard"));
 const AqiIndex = lazy(() => import("./pages/AqiIndex"));
 const RecentBlogs = lazy(() => import("./pages/RecentBlogs"));
 const Blog = lazy(() => import("./pages/Blog"));
+const Health = lazy(() => import("./pages/Health"));
 
 const App = () => {
 	return (
@@ -21,6 +22,7 @@ const App = () => {
 					<Route path="/aqi/index" element={<AqiIndex />} />
 					<Route path="/blogs" element={<RecentBlogs />} />
 					<Route path="/blogs/:id" element={<Blog />} />
+					<Route path="/health" element={<Health />} />
 					<Route path="*" element={<h2>Page Not Found</h2>} />
 				</Routes>
 				<ToastContainer

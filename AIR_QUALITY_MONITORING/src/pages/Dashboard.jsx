@@ -264,19 +264,18 @@ export const WidgetItem = ({ heading, aqi }) => {
 		pathColor = "#39a033";
 		aqiLevel = "Good";
 	}
+
+	let emoji = "";
+	if (aqiLevel === "Hazardous" || aqiLevel === "Severe") {
+		emoji = "❗️"; // Exclamation emoji for hazardous and severe levels
+	} else {
+		emoji = "😊"; // Smiley emoji for other levels
+	}
+
 	return (
 		<article className="widget">
 			<div>
 				<h4>{heading}</h4>
-				{/* <p>
-					<select value={selectedOption} onChange={handleOptionChange}>
-						<option value="Today">Today</option>
-						<option value="LastWeek">Last Week</option>
-						<option value="LastMonth">Last Month</option>
-						<option value="LastYear">Last Year</option>
-						<option value="All">All</option>
-					</select>
-				</p> */}
 			</div>
 			<CircularProgressbar
 				value={aqi}
@@ -290,20 +289,40 @@ export const WidgetItem = ({ heading, aqi }) => {
 			<div
 				className="aqi-level"
 				style={{
-					padding: ".6rem 3rem",
-					marginLeft: "auto",
-					backgroundColor: pathColor,
-					color: "#fcfcfc",
-					borderRadius: "60px",
-					marginTop: ".3rem",
+					color: pathColor,
 				}}
 			>
 				{aqiLevel}
 			</div>
+			<p>
+				{emoji} Let&apos;s take a breath of fresh air! Keep track of Air Quality for a healthier life. {emoji}
+			</p>
+			<p>
+				<span style={{ color: pathColor }}>Health Impact:</span> {getHealthImpact(aqiLevel)}
+			</p>
 		</article>
 	);
 };
 
 export default Dashboard;
+
+function getHealthImpact(aqiLevel) {
+	switch (aqiLevel) {
+		case "Hazardous":
+			return "Avoid outdoor activities and stay indoors.";
+		case "Severe":
+			return "Limit outdoor activities, especially if you have respiratory issues.";
+		case "Unhealthy":
+			return "Sensitive individuals may experience health effects; everyone should limit prolonged outdoor exertion.";
+		case "Poor":
+			return "Some individuals may experience health effects; sensitive groups may experience more serious effects.";
+		case "Moderate":
+			return "Air quality is acceptable; however, there may be some health concern for a small number of people who are unusually sensitive to air pollution.";
+		case "Good":
+			return "Air quality is satisfactory, and air pollution poses little or no risk.";
+		default:
+			return "";
+	}
+}
 
 // http://api.airvisual.com/v2/countries?key={{YOUR_API_KEY}}
