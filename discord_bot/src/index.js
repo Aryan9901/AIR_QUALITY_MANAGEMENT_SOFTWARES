@@ -38,8 +38,44 @@ async function getCityCoordinates(cityName) {
     }
 }
 
+function getHealthImpact(aqiLevel) {
+    switch (aqiLevel) {
+         case "Hazardous":
+              return "Avoid outdoor activities and stay indoors.";
+         case "Severe":
+              return "Limit outdoor activities, especially if you have respiratory issues.";
+         case "Unhealthy":
+              return "Sensitive individuals may experience health effects; everyone should limit prolonged outdoor exertion.";
+         case "Poor":
+              return "Some individuals may experience health effects; sensitive groups may experience more serious effects.";
+         case "Moderate":
+              return "Air quality is acceptable; however, there may be some health concern for a small number of people who are unusually sensitive to air pollution.";
+         case "Good":
+              return "Air quality is satisfactory, and air pollution poses little or no risk.";
+         default:
+              return "";
+    }
+}
 
+const calculateAqiLevel = (aqi) => {
+    let aqiLevel = "";
 
+    if (aqi >= 401 && aqi <= 500) {
+         aqiLevel = "Hazardous";
+    } else if (aqi >= 301 && aqi <= 400) {
+         aqiLevel = "Severe";
+    } else if (aqi >= 201 && aqi <= 300) {
+         aqiLevel = "Unhealthy";
+    } else if (aqi >= 101 && aqi <= 200) {
+         aqiLevel = "Poor";
+    } else if (aqi >= 51 && aqi <= 100) {
+         aqiLevel = "Moderate";
+    } else {
+         aqiLevel = "Good";
+    }
+
+    return aqiLevel;
+}
 
 // Function to fetch HTTP data and log it
 // function fetchData(url) {
@@ -99,10 +135,13 @@ client.on('messageCreate' , async (message) => {
                 if (jsonData && jsonData.list && jsonData.list.length > 0) {
                     const components = jsonData.list[0].components;
                     const maxPollutant = getMaxPollutant(components);
+                    let aqi_impact = calculateAqiLevel(maxPollutant);
+                    let aqi_impact_level = getHealthImpact(aqi_impact);
+
                     const replyMessage = 
                     `AQI of: ${city}\nCO: ${components.co} µg/m3, \nSO2: ${components.so2} µg/m3, \nNO2: ${components.no2} µg/m3, \nO3: ${components.o3} µg/m3, \nPM2.5: ${components.pm2_5} µg/m3, \nPM10: ${components.pm10} µg/m3`;
 
-                    const replyMessageWithMax = `${replyMessage}\nAir Qulaity Index: ${maxPollutant}`;
+                    const replyMessageWithMax = `${replyMessage}\nAir Qulaity Index: ${maxPollutant}\n\n Health Impact ${aqi_impact_level}`;
 
                     message.reply(replyMessageWithMax);
 
