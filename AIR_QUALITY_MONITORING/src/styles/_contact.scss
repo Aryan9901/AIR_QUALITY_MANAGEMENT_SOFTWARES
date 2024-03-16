@@ -19,6 +19,9 @@
 		font-family: "poppins";
 		text-align: center;
 		letter-spacing: 2px;
+		width: 70%;
+		margin: 0 auto;
+		text-wrap: balance;
 	}
 	> div {
 		@include grid(20% 80%);

@@ -326,3 +326,23 @@ function getHealthImpact(aqiLevel) {
 }
 
 // http://api.airvisual.com/v2/countries?key={{YOUR_API_KEY}}
+
+const calculateAqiLevel = (aqi) => {
+	let aqiLevel = "";
+
+	if (aqi >= 401 && aqi <= 500) {
+		aqiLevel = "Hazardous";
+	} else if (aqi >= 301 && aqi <= 400) {
+		aqiLevel = "Severe";
+	} else if (aqi >= 201 && aqi <= 300) {
+		aqiLevel = "Unhealthy";
+	} else if (aqi >= 101 && aqi <= 200) {
+		aqiLevel = "Poor";
+	} else if (aqi >= 51 && aqi <= 100) {
+		aqiLevel = "Moderate";
+	} else {
+		aqiLevel = "Good";
+	}
+
+	return aqiLevel;
+};

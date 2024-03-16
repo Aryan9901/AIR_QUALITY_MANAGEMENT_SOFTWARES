@@ -9,7 +9,7 @@ const Contact = () => {
 			<AdminSidebar />
 			<main className="contact">
 				<h2>AQI - Contact INFO</h2>
-				<p>Looking for any air quality monitoring data or solutions?</p>
+				<p>Looking for any air quality monitoring data or solutions? We are always here to help you.</p>
 				<div>
 					<BsFillTelephoneFill />
 					<div>

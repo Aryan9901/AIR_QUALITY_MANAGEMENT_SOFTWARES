@@ -20,7 +20,7 @@
 		opacity: 0.6;
 	}
 	> .aqiContainer {
-		@include flex(row, space-between, flex-start, 1rem);
+		@include flex(row, center, flex-start, 1rem);
 		flex-wrap: wrap;
 		width: 100%;
 		// background-color: red;
@@ -31,6 +31,7 @@
 			background-color: rgba(185, 187, 185, 0.584);
 			color: #000000;
 			padding: 1rem 2rem;
+			height: 16rem;
 			border-radius: 8px;
 			text-align: center;
 			&:nth-child(6) {

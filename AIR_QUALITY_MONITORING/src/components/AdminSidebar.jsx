@@ -8,6 +8,8 @@ import { BsFileText } from "react-icons/bs";
 // eslint-disable-next-line no-unused-vars
 import { Link, useLocation } from "react-router-dom";
 import { LiaBlogSolid } from "react-icons/lia";
+import { MdHealthAndSafety } from "react-icons/md";
+import { MdContactMail } from "react-icons/md";
 
 const AdminSidebar = () => {
 	const location = useLocation();
@@ -71,8 +73,8 @@ const DivOne = ({ location }) => (
 			<Li url="/dashboard" text="Home" Icon={RiDashboardFill} location={location} />
 			<Li url="/aqi/index" text="AQI Quality Index Scale" Icon={BsFileText} location={location} />
 			<Li url="/blogs" text="Blogs" Icon={LiaBlogSolid} location={location} />
-			<Li url="/health" text="AQI & Health" Icon={LiaBlogSolid} location={location} />
-			<Li url="/contact" text="Contact" Icon={LiaBlogSolid} location={location} />
+			<Li url="/health" text="AQI & Health" Icon={MdHealthAndSafety} location={location} />
+			<Li url="/contact" text="Contact" Icon={MdContactMail} location={location} />
 		</ul>
 	</div>
 );
