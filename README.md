@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h3><b>Air Pollution</b></h3>
+  <h1><b>Air Pollution</b></h1>
 
 </div>
 
@@ -63,7 +63,13 @@
     <li><a href="https://www.mongodb.com/">Mongo-DB</a></li>
   </ul>
 </details>
-  
+<details>
+  <summary>Hardware</summary>
+  <ul>
+    <li><a href="https://www.arduino.cc/">Arduino-Uno</a></li>
+    <li><a href="https://blynk.io/">Blynk-Software</a></li>
+  </ul>
+</details>  
 
 
 <!-- Features -->
@@ -82,6 +88,8 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!--Circuit Diagram--!>
+<img src = "" ></img>
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
@@ -112,8 +120,7 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 <code>
-  git clone https://github.com/batoolfatima2135/air-pollution-data.git
-  cd book-store
+  git clone https://github.com/Aryan9901/AIR_QUALITY_MANAGEMENT_SOFTWARES.git
 </code>
 
 
@@ -140,9 +147,14 @@ You can deploy this project using: GitHub Pages or render
 
 👤 **Batool Fatima**
 
-- GitHub: [@githubhandle](https://github.com/batoolfatima2135)
-- Twitter: [@twitterhandle](https://twitter.com/batool2135)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/batool-fatima-515531196/)
+- GitHub: [@Aryan9901](https://github.com/Aryan9901)
+           [@dhruvsaboo1805](https://github.com/dhruvsaboo1805)
+            [@hussainamaan87](https://github.com/hussainamaan87)
+  
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/dhruvsaboo1805)
+            [LinkedIn](https://www.linkedin.com/in/agaryan)
+            [LinkedIn](https://www.linkedin.com/in/hussainamaan87)
+            [LinkedIn](https://www.linkedin.com/in/akanksha314)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
