@@ -5,7 +5,6 @@ import Loader from "./components/Loader";
 import { Bounce, ToastContainer } from "react-toastify";
 
 // ** pages lazy import()
-const Signup = lazy(() => import("./pages/Signup"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const AqiIndex = lazy(() => import("./pages/AqiIndex"));
 const RecentBlogs = lazy(() => import("./pages/RecentBlogs"));
@@ -18,8 +17,7 @@ const App = () => {
 		<BrowserRouter>
 			<Suspense fallback={<Loader />}>
 				<Routes>
-					<Route path="/" element={<Signup />} />
-					<Route path="/dashboard" element={<Dashboard />} />
+					<Route path="/" element={<Dashboard />} />
 					<Route path="/aqi/index" element={<AqiIndex />} />
 					<Route path="/blogs" element={<RecentBlogs />} />
 					<Route path="/blogs/:id" element={<Blog />} />
