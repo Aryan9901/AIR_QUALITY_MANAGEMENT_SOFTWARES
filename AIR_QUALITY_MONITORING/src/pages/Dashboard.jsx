@@ -14,7 +14,7 @@ import axios from "axios";
 import { useGeolocated } from "react-geolocated";
 import { LineChart, PieChart } from "../components/chart";
 
-const aqiComparision = () => {};
+// const aqiComparision = () => {};
 
 // getCountryNames
 const Dashboard = () => {
@@ -241,7 +241,7 @@ export const AqiLevel = ({ value, unit, parameter, color, max = 100 }) => {
 	);
 };
 
-export const WidgetItem = ({ heading, data, aqi }) => {
+export const WidgetItem = ({ heading, aqi }) => {
 	let pathColor = "";
 	let aqiLevel = "";
 
@@ -292,8 +292,8 @@ export const WidgetItem = ({ heading, data, aqi }) => {
 				style={{
 					padding: ".6rem 3rem",
 					marginLeft: "auto",
-					backgroundColor: "#d7ebf1",
-					color: pathColor,
+					backgroundColor: pathColor,
+					color: "#fcfcfc",
 					borderRadius: "60px",
 					marginTop: ".3rem",
 				}}

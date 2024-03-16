@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import { AiFillFileText, AiTwotoneCar } from "react-icons/ai";
+// import { AiFillFileText, AiTwotoneCar } from "react-icons/ai";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { RiDashboardFill } from "react-icons/ri";
-import { IoPersonAdd } from "react-icons/io5";
+// import { IoPersonAdd } from "react-icons/io5";
 import { BsFileText } from "react-icons/bs";
 // eslint-disable-next-line no-unused-vars
 import { Link, useLocation } from "react-router-dom";
+import { LiaBlogSolid } from "react-icons/lia";
 
 const AdminSidebar = () => {
 	const location = useLocation();
@@ -49,15 +50,10 @@ const AdminSidebar = () => {
 				}
 			>
 				{/* <h2>Logo.</h2> */}
-				<img
-					src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/IMG_Academy_Logo.svg/640px-IMG_Academy_Logo.svg.png"
-					alt="user image"
-				/>
-				<h2>Marvin McKinny</h2>
-				<h5>President of Sales</h5>
+				<img src="/public/vaayu.png" alt="user image" style={{ width: "100%" }} />
+				{/* <h2>Marvin McKinny</h2> */}
+				{/* <h5>President of Sales</h5> */}
 				<DivOne location={location} />
-
-				<button id="logout-sidebar">Logout</button>
 
 				{phoneActive && (
 					<button id="close-sidebar" onClick={() => setShowModal(false)}>
@@ -73,13 +69,8 @@ const DivOne = ({ location }) => (
 	<div>
 		<ul>
 			<Li url="/dashboard" text="Home" Icon={RiDashboardFill} location={location} />
-			<Li url="/invoice" text="AQI Quality Index Scale" Icon={BsFileText} location={location} />
-			<Li url="/cars" text="Weather Ranking" Icon={AiTwotoneCar} location={location} />
-			{/*  TODO: NEED TO CHANGE THE NAME OF THE MONITOR TAB */}
-			<Li url="/profile/owner" text="Monitor" Icon={AiFillFileText} location={location} />
-			<Li url="/aqi/map" text="Air Quality Map" Icon={AiFillFileText} location={location} />
-			<Li url="/add/new" text="Contact Us" Icon={IoPersonAdd} location={location} />
-			{/* <Li url="/settings" text="Settings" Icon={AiFillFileText} location={location} /> */}
+			<Li url="/aqi/index" text="AQI Quality Index Scale" Icon={BsFileText} location={location} />
+			<Li url="/blogs" text="Blogs" Icon={LiaBlogSolid} location={location} />
 		</ul>
 	</div>
 );
