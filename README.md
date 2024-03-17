@@ -96,9 +96,9 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Live Demo](https://air-pollution-data.vercel.app/) 
+[Live Demo]() 
 <br>
-[Video Presentation](https://youtu.be/Fvw-E-pgo4c)
+[Video Presentation]()
 
 <!-- - [Live Demo Link](https://google.com) -->
 
