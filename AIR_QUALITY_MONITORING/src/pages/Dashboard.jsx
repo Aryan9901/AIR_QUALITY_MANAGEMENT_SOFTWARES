@@ -205,12 +205,12 @@ const Dashboard = () => {
 									<CircularProgressbar value={currAqi} text={`${currAqi}`} maxValue={500} />
 								</div>
 								<div className="data">
-									<AqiLevel value={pollutants.pm2_5} unit="ug/m^2" parameter="PM 2.5" color={"yellow"} />
-									<AqiLevel value={pollutants.co} unit="ug/m^2" parameter="CO" color={"red"} />
-									<AqiLevel value={pollutants.no2} unit="ug/m^2" parameter="NO2" color={"green"} />
-									<AqiLevel value={pollutants.pm10} unit="ug/m^2" parameter="PM10" color={"salmon"} />
-									<AqiLevel value={pollutants.so2} unit="ug/m^2" parameter="SO2" color={"cyan"} />
-									<AqiLevel value={pollutants.nh3} unit="ug/m^2" parameter="NH3" color={"cyan"} />
+									<AqiLevel value={pollutants?.pm2_5} unit="ug/m^2" parameter="PM 2.5" color={"yellow"} />
+									<AqiLevel value={pollutants?.co} unit="ug/m^2" parameter="CO" color={"red"} />
+									<AqiLevel value={pollutants?.no2} unit="ug/m^2" parameter="NO2" color={"green"} />
+									<AqiLevel value={pollutants?.pm10} unit="ug/m^2" parameter="PM10" color={"salmon"} />
+									<AqiLevel value={pollutants?.so2} unit="ug/m^2" parameter="SO2" color={"cyan"} />
+									<AqiLevel value={pollutants?.nh3} unit="ug/m^2" parameter="NH3" color={"cyan"} />
 								</div>
 							</div>
 							<PieChart
