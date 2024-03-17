@@ -89,7 +89,10 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!--Circuit Diagram--!>
-<img src = "" ></img>
+<img src = "https://github.com/Aryan9901/AIR_QUALITY_MANAGEMENT_SOFTWARES/blob/main/images/circuit_diagram.png" ></img>
+
+<h2>System Structure</h2>
+<img src = "https://github.com/dhruvsaboo1805/AIR_QUALITY_MANAGEMENT_SOFTWARES/blob/3f3c27bfa14ee1626350d86908bab17d5e6f1aac/images/System%20Structure.png"></img>
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
