@@ -134,7 +134,8 @@ const Dashboard = () => {
 							aqi={cityAqi}
 						/>
 						<WidgetItem
-							heading={currCity || ""}
+							heading={"New Delhi US Embassy, India (नई दिल्ली अमेरिकी दूतावास)"}
+							// heading={currCity || ""}
 							color="rgba(0,198,202)"
 							data={[38, 306, 10, 6, pollutants?.nh3, pollutants?.pm10]}
 							aqi={currAqi}
@@ -148,9 +149,6 @@ const Dashboard = () => {
 									<FaLocationArrow />
 									{searchedcity}
 								</h3>
-								<button className={cityaqi > 10 ? "redbg" : aqi >= 5 ? "purplebg" : "greenbg"}>
-									{aqi > 10 ? "Severe" : aqi >= 5 ? "Moderate" : "Mild"}
-								</button>
 							</div>
 							<div className="maindata">
 								<div className="graph">
@@ -197,10 +195,10 @@ const Dashboard = () => {
 						</div>
 						<section className="cityCard">
 							<div className="header">
-								<h3>{currCity}</h3>
-								<button className={cityaqi > 10 ? "redbg" : aqi >= 5 ? "purplebg" : "greenbg"}>
-									{aqi > 10 ? "Severe" : aqi >= 5 ? "Moderate" : "Mild"}
-								</button>
+								<h3>
+									New Delhi US Embassy, India (नई दिल्ली अमेरिकी दूतावास)
+									{/* {currCity} */}
+								</h3>
 							</div>
 							<div className="maindata" style={{ marginBottom: "2rem" }}>
 								<div className="graph">
@@ -252,7 +250,7 @@ export const WidgetItem = ({ heading, aqi }) => {
 		pathColor = "#975aa0";
 		aqiLevel = "Severe";
 	} else if (aqi >= 201 && aqi <= 300) {
-		pathColor = "pink";
+		pathColor = "#ea519f";
 		aqiLevel = "Unhealthy";
 	} else if (aqi >= 101 && aqi <= 200) {
 		pathColor = "#e75834";
@@ -326,23 +324,3 @@ function getHealthImpact(aqiLevel) {
 }
 
 // http://api.airvisual.com/v2/countries?key={{YOUR_API_KEY}}
-
-const calculateAqiLevel = (aqi) => {
-	let aqiLevel = "";
-
-	if (aqi >= 401 && aqi <= 500) {
-		aqiLevel = "Hazardous";
-	} else if (aqi >= 301 && aqi <= 400) {
-		aqiLevel = "Severe";
-	} else if (aqi >= 201 && aqi <= 300) {
-		aqiLevel = "Unhealthy";
-	} else if (aqi >= 101 && aqi <= 200) {
-		aqiLevel = "Poor";
-	} else if (aqi >= 51 && aqi <= 100) {
-		aqiLevel = "Moderate";
-	} else {
-		aqiLevel = "Good";
-	}
-
-	return aqiLevel;
-};

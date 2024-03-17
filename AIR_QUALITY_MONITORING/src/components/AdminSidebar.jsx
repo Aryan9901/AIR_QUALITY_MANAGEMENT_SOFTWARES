@@ -67,10 +67,11 @@ const AdminSidebar = () => {
 	);
 };
 
-const DivOne = ({ location }) => (
+const DivOne = () => (
 	<div>
 		<ul>
 			<Li url="/" text="Home" Icon={RiDashboardFill} location={location} />
+			{/* <Li url="/forecast" text="AQI Forecast" Icon={RiDashboardFill} location={location} /> */}
 			<Li url="/aqi/index" text="AQI Quality Index Scale" Icon={BsFileText} location={location} />
 			<Li url="/blogs" text="Blogs" Icon={LiaBlogSolid} location={location} />
 			<Li url="/health" text="AQI & Health" Icon={MdHealthAndSafety} location={location} />
@@ -78,7 +79,7 @@ const DivOne = ({ location }) => (
 		</ul>
 	</div>
 );
-const Li = ({ url, location, text, Icon }) => (
+const Li = ({ url, text, Icon }) => (
 	<li
 	// style={{
 	// 	backgroundColor: location.pathname.includes(url) ? "white" : "transparent",

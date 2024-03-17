@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import Loader from "./components/Loader";
 import { Bounce, ToastContainer } from "react-toastify";
 
@@ -11,6 +11,7 @@ const RecentBlogs = lazy(() => import("./pages/RecentBlogs"));
 const Blog = lazy(() => import("./pages/Blog"));
 const Health = lazy(() => import("./pages/Health"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Forecast = lazy(() => import("./pages/Forecast"));
 
 const App = () => {
 	return (
@@ -23,6 +24,7 @@ const App = () => {
 					<Route path="/blogs/:id" element={<Blog />} />
 					<Route path="/health" element={<Health />} />
 					<Route path="/contact" element={<Contact />} />
+					<Route path="/forecast" element={<Forecast />} />
 					<Route path="*" element={<h2>Page Not Found</h2>} />
 				</Routes>
 				<ToastContainer

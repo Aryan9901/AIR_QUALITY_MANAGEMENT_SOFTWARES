@@ -1,0 +1,43 @@
+.forecast {
+	overflow-y: auto;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	height: 100vh;
+	width: 100%;
+	background-color: aliceblue;
+	> h2 {
+		text-align: center;
+		padding: 2rem;
+		// width: 55%;
+		font-size: 2rem;
+		// text-wrap: balance;
+		margin: 0 auto;
+		@include heading;
+	}
+	> p {
+		font-family: "poppins";
+		font-weight: 400;
+		opacity: 0.6;
+		width: 60%;
+		margin: 0 auto;
+		font-size: 1.2rem;
+		text-align: center;
+		text-wrap: balance;
+	}
+	> .forecastContainer {
+		width: 100%;
+		margin: 1rem 0;
+	}
+}
+
+.forecastContainer {
+	> .table {
+		width: 100%;
+		@include flex(column, flex-start, flex-start, 0);
+		> .thead {
+			@include grid(1fr);
+			width: 100%;
+		}
+	}
+}

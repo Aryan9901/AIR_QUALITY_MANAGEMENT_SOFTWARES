@@ -82,6 +82,7 @@
 @import "./recentblogs";
 @import "./health";
 @import "./contact";
+@import "./forecast";
 @import "./mediaQueries";
 :root {
 	font-family: "Helvetica Rounded", Arial, sans-serif;
@@ -93,6 +94,10 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+#goog-gt-vt {
+	display: none !important;
 }
 
 button {

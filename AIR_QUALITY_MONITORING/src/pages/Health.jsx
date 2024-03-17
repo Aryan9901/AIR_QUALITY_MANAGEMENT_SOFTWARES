@@ -1,5 +1,4 @@
 import AdminSidebar from "../components/AdminSidebar";
-// import { useTranslation } from "react-i18next";
 
 const Health = () => {
 	// const { t } = useTranslation();
@@ -30,7 +29,6 @@ const Health = () => {
 						height="315"
 						src="https://www.youtube.com/embed/ycBoiBwHuGE?si=iym2Ax-4pN7XYwzY"
 						title="YouTube video player"
-						frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						allowfullscreen
 					></iframe>
@@ -39,7 +37,6 @@ const Health = () => {
 						height="315"
 						src="https://www.youtube.com/embed/6IKaUTYWtvg?si=-90Z6yjAURC7vgFi"
 						title="YouTube video player"
-						frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						allowfullscreen
 					></iframe>
@@ -48,7 +45,6 @@ const Health = () => {
 						height="315"
 						src="https://www.youtube.com/embed/Aabz4MHXgT4?si=MoQ1D86isTiKmlE4"
 						title="YouTube video player"
-						frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						allowfullscreen
 					></iframe>
@@ -57,7 +53,6 @@ const Health = () => {
 						height="315"
 						src="https://www.youtube.com/embed/GVBeY1jSG9Y?si=TwbcQavZkGprjMUb"
 						title="YouTube video player"
-						frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						allowfullscreen
 					></iframe>
@@ -66,7 +61,6 @@ const Health = () => {
 						height="315"
 						src="https://www.youtube.com/embed/rn9eUIbqCPU?si=2m5Sf6Qo7BOMcBYc"
 						title="YouTube video player"
-						frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						allowfullscreen
 					></iframe>
@@ -75,7 +69,6 @@ const Health = () => {
 						height="315"
 						src="https://www.youtube.com/embed/Tds3k97aAzo?si=wcUdB29BXB7K8b5L"
 						title="YouTube video player"
-						frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						allowfullscreen
 					></iframe>
