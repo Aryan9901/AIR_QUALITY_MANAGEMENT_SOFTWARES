@@ -228,3 +228,40 @@
 		}
 	}
 }
+
+@media screen and (max-width: 570px) {
+	.mapContainer {
+		flex-direction: column !important;
+		> div {
+			width: 100% !important;
+		}
+		.cityCard {
+			width: 100% !important;
+		}
+	}
+}
+@media screen and (max-width: 450px) {
+	.mapContainer {
+		> .HomeCard {
+			> .header {
+				flex-direction: column !important;
+				row-gap: 1rem !important;
+			}
+			> .maindata {
+				flex-direction: column !important;
+				> .graph {
+					width: 100% !important;
+					> svg {
+						width: 100% !important;
+					}
+				}
+				> .data {
+					width: 100% !important;
+					> .aqiLevel {
+						width: 100% !important;
+					}
+				}
+			}
+		}
+	}
+}
