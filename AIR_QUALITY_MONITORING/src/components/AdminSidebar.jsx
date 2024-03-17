@@ -70,7 +70,7 @@ const AdminSidebar = () => {
 const DivOne = ({ location }) => (
 	<div>
 		<ul>
-			<Li url="/dashboard" text="Home" Icon={RiDashboardFill} location={location} />
+			<Li url="/" text="Home" Icon={RiDashboardFill} location={location} />
 			<Li url="/aqi/index" text="AQI Quality Index Scale" Icon={BsFileText} location={location} />
 			<Li url="/blogs" text="Blogs" Icon={LiaBlogSolid} location={location} />
 			<Li url="/health" text="AQI & Health" Icon={MdHealthAndSafety} location={location} />
