@@ -53,7 +53,7 @@
   <summary>Back-End</summary>
   <ul>
     <li><a href="https://nodejs.org/docs/latest/api/">Node-js</a></li>
-    <li><a href="https://cron-job.org/en/">Chrone Job</a></li>
+    <li><a href="https://cron-job.org/en/">Cron Job</a></li>
     <li><a href="https://expressjs.com/">Express-Js</a></li>
   </ul>
 </details>
