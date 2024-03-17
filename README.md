@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h1><b>Air Pollution</b></h1>
+  <h1><b>My Air Visual</b></h1>
 
 </div>
 
