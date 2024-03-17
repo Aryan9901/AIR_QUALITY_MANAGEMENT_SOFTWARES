@@ -151,10 +151,10 @@ You can deploy this project using: GitHub Pages or render
            [@dhruvsaboo1805](https://github.com/dhruvsaboo1805)
             [@hussainamaan87](https://github.com/hussainamaan87)
   
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/dhruvsaboo1805)
-            [LinkedIn](https://www.linkedin.com/in/agaryan)
-            [LinkedIn](https://www.linkedin.com/in/hussainamaan87)
-            [LinkedIn](https://www.linkedin.com/in/akanksha314)
+- LinkedIn: [Aryan Gupta](https://www.linkedin.com/in/agaryan)
+            [Dhruv Saboo](https://www.linkedin.com/in/dhruvsaboo1805)
+            [Amaan Hussain](https://www.linkedin.com/in/hussainamaan87)
+            [Akansha Seth](https://www.linkedin.com/in/akanksha314)
 
 
 
