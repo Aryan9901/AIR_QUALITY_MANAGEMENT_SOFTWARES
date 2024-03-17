@@ -134,8 +134,8 @@ const Dashboard = () => {
 							aqi={cityAqi}
 						/>
 						<WidgetItem
-							heading={"New Delhi US Embassy, India (नई दिल्ली अमेरिकी दूतावास)"}
-							// heading={currCity || ""}
+							// heading={"New Delhi US Embassy, India (नई दिल्ली अमेरिकी दूतावास)"}
+							heading={currCity || ""}
 							color="rgba(0,198,202)"
 							data={[38, 306, 10, 6, pollutants?.nh3, pollutants?.pm10]}
 							aqi={currAqi}
@@ -206,8 +206,8 @@ const Dashboard = () => {
 						<section className="cityCard">
 							<div className="header">
 								<h3>
-									New Delhi US Embassy, India (नई दिल्ली अमेरिकी दूतावास)
-									{/* {currCity} */}
+									{/* New Delhi US Embassy, India (नई दिल्ली अमेरिकी दूतावास) */}
+									{currCity}
 								</h3>
 							</div>
 							<div className="maindata" style={{ marginBottom: "2rem" }}>
