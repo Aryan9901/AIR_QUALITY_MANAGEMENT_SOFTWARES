@@ -16,9 +16,9 @@ function Bar({ query, setQuery }) {
 				{/* <i>
 					<MdGTranslate />
 				</i> */}
-				<i>
+				{/* <i>
 					<FaBell />
-				</i>
+				</i> */}
 				{/* <img
 					src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/IMG_Academy_Logo.svg/640px-IMG_Academy_Logo.svg.png"
 					alt="user iamge"

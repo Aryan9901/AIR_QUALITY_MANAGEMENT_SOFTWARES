@@ -145,6 +145,12 @@ a {
 		padding: 1rem;
 		z-index: 10;
 		overflow-y: auto;
+		.active {
+			color: #029e9d;
+			background-color: #fcfcfc;
+			padding: 1rem 1rem;
+			border-radius: 8px;
+		}
 		> img {
 			width: 40%;
 			display: block;
@@ -178,11 +184,12 @@ a {
 				@include flex(column, unset, unset, 0.5rem);
 				list-style: none;
 				> li {
-					padding: 0.5rem 1rem;
+					padding: 0.5rem 0;
 					border-radius: 10px;
 					a {
 						color: rgba(0, 0, 0, 0.825);
 						@include flex(row, unset);
+						padding: 0rem 1rem;
 					}
 				}
 			}

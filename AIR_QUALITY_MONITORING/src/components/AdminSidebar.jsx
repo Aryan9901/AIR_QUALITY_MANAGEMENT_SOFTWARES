@@ -6,7 +6,7 @@ import { RiDashboardFill } from "react-icons/ri";
 // import { IoPersonAdd } from "react-icons/io5";
 import { BsFileText } from "react-icons/bs";
 // eslint-disable-next-line no-unused-vars
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { LiaBlogSolid } from "react-icons/lia";
 import { MdHealthAndSafety } from "react-icons/md";
 import { MdContactMail } from "react-icons/md";
@@ -80,23 +80,23 @@ const DivOne = ({ location }) => (
 );
 const Li = ({ url, location, text, Icon }) => (
 	<li
-		style={{
-			backgroundColor: location.pathname.includes(url) ? "white" : "transparent",
-		}}
+	// style={{
+	// 	backgroundColor: location.pathname.includes(url) ? "white" : "transparent",
+	// }}
 	>
-		<Link
+		<NavLink
 			to={url}
-			style={{
-				fontWeight: location.pathname.includes(url) ? "bold" : "400",
-			}}
+			// style={{
+			// 	fontWeight: location.pathname.includes(url) ? "bold" : "400",
+			// }}
 		>
 			<Icon
-				style={{
-					color: location.pathname.includes(url) ? "black" : "white",
-				}}
+			// style={{
+			// 	color: location.pathname.includes(url) ? "black" : "white",
+			// }}
 			/>
 			{text}
-		</Link>
+		</NavLink>
 	</li>
 );
 
