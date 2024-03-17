@@ -146,10 +146,11 @@ a {
 	background-color: rgb(247, 247, 247);
 	> aside {
 		width: 100%;
-		background-color: #029e9d;
+		background-color: #f0f8ff;
 		padding: 1rem;
 		z-index: 10;
 		overflow-y: auto;
+		box-shadow: 1px 0 2px #d5d3d4;
 		.active {
 			color: #029e9d;
 			background-color: #fcfcfc;

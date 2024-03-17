@@ -14,6 +14,7 @@
 
 		.widget {
 			position: relative;
+			font-family: "poppins";
 			.aqi-level {
 				position: absolute;
 				top: 5%;
@@ -27,7 +28,7 @@
 			border-radius: 10px;
 			min-width: 18rem;
 			// height: 14rem;
-			background-color: #feffffa5;
+			background-color: #fff;
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.132);
 			padding: 1rem;
 			@include flex(column, flex-start, unset, 0.4rem);
@@ -97,7 +98,7 @@
 		}
 	}
 	.aqicnt {
-		background: url("/public/image.png") #00000064;
+		// background: url("/public/image.png") #00000064;
 	}
 	// ** map hero container
 	.mapContainer {

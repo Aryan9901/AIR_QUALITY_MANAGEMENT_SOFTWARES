@@ -5,7 +5,7 @@
 	}
 	height: 100vh;
 	width: 100%;
-	background-color: aliceblue;
+	background-color: #fff;
 	> h2 {
 		font-size: 2.3rem;
 		text-align: center;
@@ -29,7 +29,7 @@
 		place-items: center;
 		margin: 1rem auto;
 		padding: 1rem 2rem;
-		box-shadow: 0 0 2px #e6e7e8;
+		box-shadow: 0 0 1px 1px #e6e7e8;
 		width: 50%;
 		> svg {
 			font-size: 1.4rem;

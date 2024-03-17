@@ -12,12 +12,13 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import axios from "axios";
 import { useGeolocated } from "react-geolocated";
-import { DougnutChart, LineChart, PieChart } from "../components/chart";
+import { LineChart, PieChart } from "../components/chart";
 
 // const aqiComparision = () => {};
 
 // getCountryNames
 const Dashboard = () => {
+	// eslint-disable-next-line no-unused-vars
 	const [aqi, setAqi] = useState();
 	const [pollutants, setPollutants] = useState({});
 	const [query, setQuery] = useState("");
@@ -31,6 +32,7 @@ const Dashboard = () => {
 		temp: "",
 		humidity: "",
 	});
+	// eslint-disable-next-line no-unused-vars
 	const [cityaqi, setCityaqi] = useState();
 	const [cityPollutant, setCityPollutant] = useState();
 
@@ -152,7 +154,13 @@ const Dashboard = () => {
 							</div>
 							<div className="maindata">
 								<div className="graph">
-									<CircularProgressbar value={cityAqi} text={`${cityAqi}`} />
+									<CircularProgressbar
+										value={cityAqi}
+										text={`${cityAqi}`}
+										styles={buildStyles({
+											trailColor: "#e6e6e6",
+										})}
+									/>
 
 									<div className="g1">
 										<IoIosPartlySunny /> {weather.temp}C
@@ -164,12 +172,12 @@ const Dashboard = () => {
 								<div className="data">
 									{cityPollutant && (
 										<>
-											<AqiLevel value={cityPollutant.pm2_5} unit="ug/m^2" parameter="PM 2.5" color={"yellow"} />
-											<AqiLevel value={cityPollutant.co} unit="ug/m^2" parameter="CO" color={"red"} />
-											<AqiLevel value={cityPollutant.no2} unit="ug/m^2" parameter="NO2" color={"green"} />
-											<AqiLevel value={cityPollutant.pm10} unit="ug/m^2" parameter="PM10" color={"salmon"} />
-											<AqiLevel value={cityPollutant.so2} unit="ug/m^2" parameter="SO2" color={"cyan"} />
-											<AqiLevel value={cityPollutant.nh3} unit="ug/m^2" parameter="NH3" color={"cyan"} />
+											<AqiLevel value={cityPollutant.pm2_5} unit="ug/m^2" parameter="PM 2.5" color={"#21ed15"} />
+											<AqiLevel value={cityPollutant.co} unit="ug/m^2" parameter="CO" color={"#f2f11f"} />
+											<AqiLevel value={cityPollutant.no2} unit="ug/m^2" parameter="NO2" color={"#fe714d"} />
+											<AqiLevel value={cityPollutant.pm10} unit="ug/m^2" parameter="PM10" color={"#FFC0CB"} />
+											<AqiLevel value={cityPollutant.so2} unit="ug/m^2" parameter="SO2" color={"#de4df3"} />
+											<AqiLevel value={cityPollutant.nh3} unit="ug/m^2" parameter="NH3" color={"#da0e26"} />
 										</>
 									)}
 								</div>
@@ -188,7 +196,7 @@ const Dashboard = () => {
 								<PieChart
 									data={[cityPollutant?.pm2_5, cityPollutant?.no2, cityPollutant?.pm10, cityPollutant?.so2, cityPollutant?.nh3]}
 									labels={["PM 2.5", "NO2", "PM10", "SO2", "NH3"]}
-									backgroundColor={["yellow", "#f8000087", "green", "blue", "#ffc44c", "purple"]}
+									backgroundColor={["#21ed15", "#f2f11f", "#fe714d", "#FFC0CB", "#de4df3", "#da0e26"]}
 									borderColor={"blue"}
 								/>
 							</div>
@@ -212,21 +220,28 @@ const Dashboard = () => {
 							</div>
 							<div className="maindata" style={{ marginBottom: "2rem" }}>
 								<div className="graph">
-									<CircularProgressbar value={currAqi} text={`${currAqi}`} maxValue={500} />
+									<CircularProgressbar
+										value={currAqi}
+										text={`${currAqi}`}
+										maxValue={500}
+										styles={buildStyles({
+											trailColor: "#e6e6e6",
+										})}
+									/>
 								</div>
 								<div className="data">
-									<AqiLevel value={pollutants?.pm2_5} unit="ug/m^2" parameter="PM 2.5" color={"yellow"} />
-									<AqiLevel value={pollutants?.co} unit="ug/m^2" parameter="CO" color={"red"} />
-									<AqiLevel value={pollutants?.no2} unit="ug/m^2" parameter="NO2" color={"green"} />
-									<AqiLevel value={pollutants?.pm10} unit="ug/m^2" parameter="PM10" color={"salmon"} />
-									<AqiLevel value={pollutants?.so2} unit="ug/m^2" parameter="SO2" color={"cyan"} />
-									<AqiLevel value={pollutants?.nh3} unit="ug/m^2" parameter="NH3" color={"cyan"} />
+									<AqiLevel value={pollutants?.pm2_5} unit="ug/m^2" parameter="PM 2.5" color={"#21ed15"} />
+									<AqiLevel value={pollutants?.co} unit="ug/m^2" parameter="CO" color={"#f2f11f"} />
+									<AqiLevel value={pollutants?.no2} unit="ug/m^2" parameter="NO2" color={"#fe714d"} />
+									<AqiLevel value={pollutants?.pm10} unit="ug/m^2" parameter="PM10" color={"#FFC0CB"} />
+									<AqiLevel value={pollutants?.so2} unit="ug/m^2" parameter="SO2" color={"#de4df3"} />
+									<AqiLevel value={pollutants?.nh3} unit="ug/m^2" parameter="NH3" color={"#da0e26"} />
 								</div>
 							</div>
 							<PieChart
 								data={[pollutants?.pm2_5, pollutants?.no2, pollutants?.pm10, pollutants?.so2, pollutants?.nh3]}
 								labels={["PM 2.5", "NO2", "PM10", "SO2", "NH3"]}
-								backgroundColor={["yellow", "#f8000087", "green", "blue", "#ffc44c", "purple"]}
+								backgroundColor={["#21ed15", "#f2f11f", "#fe714d", "#FFC0CB", "#de4df3", "#da0e26"]}
 								borderColor={"blue"}
 							/>
 						</section>
@@ -254,22 +269,22 @@ export const WidgetItem = ({ heading, aqi }) => {
 	let aqiLevel = "";
 
 	if (aqi >= 401 && aqi <= 500) {
-		pathColor = "#bf2133";
+		pathColor = "#da0e26";
 		aqiLevel = "Hazardous";
 	} else if (aqi >= 301 && aqi <= 400) {
-		pathColor = "#975aa0";
+		pathColor = "#de4df3";
 		aqiLevel = "Severe";
 	} else if (aqi >= 201 && aqi <= 300) {
-		pathColor = "#ea519f";
+		pathColor = "#FFC0CB";
 		aqiLevel = "Unhealthy";
 	} else if (aqi >= 101 && aqi <= 200) {
-		pathColor = "#e75834";
+		pathColor = "#fe714d";
 		aqiLevel = "Poor";
 	} else if (aqi >= 51 && aqi <= 100) {
-		pathColor = "#D4CA2F";
+		pathColor = "#f2f11f";
 		aqiLevel = "Moderate";
 	} else {
-		pathColor = "#39a033";
+		pathColor = "#21ed15";
 		aqiLevel = "Good";
 	}
 
@@ -292,6 +307,7 @@ export const WidgetItem = ({ heading, aqi }) => {
 				styles={buildStyles({
 					pathColor: pathColor,
 					textColor: pathColor,
+					trailColor: "#e6e6e6",
 				})}
 			/>
 			<div
