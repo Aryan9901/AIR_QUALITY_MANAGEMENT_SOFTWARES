@@ -12,7 +12,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import axios from "axios";
 import { useGeolocated } from "react-geolocated";
-import { LineChart, PieChart } from "../components/chart";
+import { DougnutChart, LineChart, PieChart } from "../components/chart";
 
 // const aqiComparision = () => {};
 
@@ -175,14 +175,14 @@ const Dashboard = () => {
 								</div>
 							</div>
 							<div className="linegraphdata">
-								<LineChart
+								{/* <LineChart
 									data={[cityPollutant?.pm2_5, cityPollutant?.no2, cityPollutant?.pm10, cityPollutant?.so2, cityPollutant?.nh3]}
 									legend="true"
 									labels={["PM 2.5", "NO2", "PM10", "SO2", "NH3"]}
 									backgroundColor={"#f8000087"}
 									borderColor={"blue"}
 									label={"Pollutants Level"}
-								/>
+								/> */}
 							</div>
 							<div className="piechartdata">
 								<PieChart
@@ -190,6 +190,16 @@ const Dashboard = () => {
 									labels={["PM 2.5", "NO2", "PM10", "SO2", "NH3"]}
 									backgroundColor={["yellow", "#f8000087", "green", "blue", "#ffc44c", "purple"]}
 									borderColor={"blue"}
+								/>
+							</div>
+							<div className="piechartdata">
+								<LineChart
+									data={[cityPollutant?.pm2_5, cityPollutant?.no2, cityPollutant?.pm10, cityPollutant?.so2, cityPollutant?.nh3]}
+									legend="true"
+									labels={["PM 2.5", "NO2", "PM10", "SO2", "NH3"]}
+									backgroundColor={"#f8000087"}
+									borderColor={"blue"}
+									label={"Pollutants Level"}
 								/>
 							</div>
 						</div>

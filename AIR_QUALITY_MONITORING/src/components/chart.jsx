@@ -151,7 +151,7 @@ export const PieChart = ({ labels, data, backgroundColor, legends = true, offset
 		},
 	};
 
-	return <Pie data={pieChartData} hei options={pieChartOptions} />;
+	return <Pie data={pieChartData} options={pieChartOptions} />;
 };
 
 // **???  Line Charts --------------------------------
@@ -181,7 +181,7 @@ export const LineChart = ({ data, label, backgroundColor, borderColor, labels, l
 			x: {
 				beginAtZero: true,
 				grid: {
-					display: false,
+					display: true,
 				},
 			},
 		},
