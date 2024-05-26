@@ -145,7 +145,7 @@ You can deploy this project using: GitHub Pages or render
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Batool Fatima**
+👤 **ARYAN GUPTA**
 
 - GitHub: [@Aryan9901](https://github.com/Aryan9901)
            [@dhruvsaboo1805](https://github.com/dhruvsaboo1805)
